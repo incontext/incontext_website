@@ -1,0 +1,7 @@
+# English strings go
+en:
+  label_wikiextensions_tags: Tags
+  label_wikiextensions_new: New
+  wiki_extensions: Wiki Extensions
+  label_wikiextensions_tab: Tab
+  wiki_extensions_add_tab: "Add tabs to the project menu."
