@@ -1,0 +1,131 @@
+/**
+ * Basecamp stylesheet, based on "alternate"
+ * author: Peter Theill, Commanigy - http://commanigy.com
+ */
+
+@import url(../../../stylesheets/application.css);
+
+body, #wrapper { font-family:"Lucida Grande", verdana, arial, helvetica, sans-serif; background-image: url(images/bg.jpg); }
+a, a:link, a:visited { color:  #810C1F; } */
+a:hover { text-decoration: underline; }
+a:hover, a:active { color: #810C1F; }
+
+#header, #top-menu, #swf { margin: 0 auto; width: 910px;}
+#header { background: #ffffff url(images/incontext_logo.jpg) no-repeat 0 0; padding: 0; height: 142px; border:1px solid #686162; border-bottom: none;}
+#header h1 { display: none; margin: 0 24px; }
+#header #quick-search { display: none; color: #000; margin: 14px 14px; }
+#header #quick-search a { color: #000; }
+#swf { height: 200px; background: #fff url(images/hp_bz.jpg) no-repeat top right; border:1px solid #686162; border-top:none; border-bottom:none;}
+#top-menu { background-color: #373737; font-size: 10px; position: relative; padding: 0; height: 21px; margin: 0 auto; width: 910px; border: 1px solid #686162; border-bottom:none;}
+#top-menu ul { padding: 0 21px; }
+#top-menu li, #top-menu #loggedas { color: #fff; line-height: 21px; margin-right: 4px; }
+#top-menu li a { color: #eee; font-weight: normal; padding:4px 5px; }
+#top-menu li a:hover { color: #fff; text-decoration: none; }
+#main { background: #eeeeee; margin: 8px 24px 0px 24px; width: 910px; margin: 0 auto; border: 1px solid #686162; border-top: none;}
+#content { background-color: #fff; border-right: 1px solid #ccc; width: 70%; overflow: auto; }
+#sidebar { width: 26%; }
+#footer { background-color: transparent; border: 0px; clear: left; color:#eeeeee; font-size:9px; margin:4px auto 20px auto; padding-bottom:15px; text-align:left; width: 910px;}
+#footer a:hover { color: #FFFFFF !important;}
+#footer a:link, #footer a:visited { color: #ffffff; }
+
+/* Headers */
+h1, h2, h3, h4 { font-family: "Lucida Grande",arial,sans-serif; }
+h1 { font-size: 24px; font-weight: normal; margin:0pt 0pt 0pt 0.25em; padding:0pt 0pt 10px; text-align:left; }
+h2, h3, h4, .wiki h1, .wiki h2, .wiki h3 { border-bottom: 0px;}
+
+h2, .wiki h1 { background-color: #fcfcfc; margin: -6px -10px 10px; padding: 10px 20px; font-size: 20px; font-weight: normal; color: #810C1F; border-bottom: 1px solid #e4e4e4;}
+.wiki h1 { font-family:"Trebuchet MS",Verdana,sans-serif; font-weight: normal;}
+.wiki h2 { background-color: #fff; }
+
+h3, h4 { font-weight: normal; }
+
+#sidebar h3 { border-bottom:1px solid #DCDCDC; padding:6px 8px; }
+
+/* Links */
+
+#sidebar a:hover { background-color:#810C1F; color:#FFFFFF; text-decoration: none;}
+
+/* Menu */
+#main-menu { margin: 5px 24px 0 24px; }
+#main-menu li a { background-color: #979799; font-weight: normal; padding:4px 8px 6px; }
+#main-menu li a:hover { background: #373737; color: #f4ec7d; text-decoration: none; }
+#main-menu li a.selected, #main-menu li a.selected:hover { background-color:#373737; color: #f4ec7d; font-weight:normal; }
+
+/* Tables */
+table.list { border: none; }
+table.list th { background-color: #fff; }
+table.list tbody td, table.list tbody tr td { border-bottom: solid 1px #ddd; font-size: 11px; padding:4px 10px 4px 3px; }
+table.list thead th {
+	border: none;
+	border-bottom:1px solid #999999;
+	font-size:9px;
+	font-weight:normal;
+	padding:0pt 3px 3px;
+	text-transform:uppercase;
+}
+
+table.list thead th a { color: #000; }
+table.list thead th a:hover { color: #000; }
+
+/* Issues grid styles by priorities (provided by Wynn Netherland) */
+table.list tr.issue a { color: #333; }
+
+tr.odd.priority-5, table.list tbody tr.odd.priority-5:hover { color: #900; font-weight: bold; }
+tr.odd.priority-5 { background: #ffc4c4; }
+tr.even.priority-5, table.list tbody tr.even.priority-5:hover { color: #900; font-weight: bold; }
+tr.even.priority-5 { background: #ffd4d4; }
+tr.priority-5 a, tr.priority-5:hover a { color: #900; }
+tr.odd.priority-5 td, tr.even.priority-5 td { border-color: #ffb4b4; }
+
+tr.odd.priority-4, table.list tbody tr.odd.priority-4:hover { color: #900; }
+tr.odd.priority-4 { background: #ffc4c4; }
+tr.even.priority-4, table.list tbody tr.even.priority-4:hover { color: #900; }
+tr.even.priority-4 { background: #ffd4d4; }
+tr.priority-4 a { color: #900; }
+tr.odd.priority-4 td, tr.even.priority-4 td { border-color: #ffb4b4; }
+
+tr.odd.priority-3, table.list tbody tr.odd.priority-3:hover { color: #900; }
+tr.odd.priority-3 { background: #fee; }
+tr.even.priority-3, table.list tbody tr.even.priority-3:hover { color: #900; }
+tr.even.priority-3 { background: #fff2f2; }
+tr.priority-3 a { color: #900; }
+tr.odd.priority-3 td, tr.even.priority-3 td { border-color: #fcc; }
+
+tr.odd.priority-1, table.list tbody tr.odd.priority-1:hover { color: #559; }
+tr.odd.priority-1 { background: #eaf7ff; }
+tr.even.priority-1, table.list tbody tr.even.priority-1:hover { color: #559; }
+tr.even.priority-1 { background: #f2faff; }
+tr.priority-1 a { color: #559; }
+tr.odd.priority-1 td, tr.even.priority-1 td { border-color: #add7f3; }
+
+p.breadcrumb {
+	background-color:#EEEEEE;
+	border-bottom:1px solid white;
+	font-size:0.9em;
+	margin:-6px -10px 6px;
+	padding:6px;
+	text-indent:15px;
+}
+
+/* Fields */
+input[type="text"], textarea, select { padding: 2px; border: 1px solid #d7d7d7; }
+input[type="text"] { padding: 4px; }
+input[type="text"]:focus, textarea:focus, select:focus { border: 1px solid #888866; }
+option { border-bottom: 1px dotted #d7d7d7; }
+input#issue_subject { font-size: 200%; width: 90%; }
+
+textarea.wiki-edit { font-family: Cambria, Verdana, Serif; font-size: larger; }
+
+/* Misc */
+.box { background-color: #fcfcfc; }
+
+.contextual { font-size: 0.9em; font-family:verdana; }
+
+hr { background:#eee none repeat scroll 0% 0%; }
+
+/* Wiki extension */
+
+div.wiki { line-height: 2em; }
+
+div.wiki .i_block { padding-left: 40px; background: url('images/button_red.jpg') no-repeat 0px 3px;}
+div.wiki .i_block_even { padding-left: 40px; background: url('images/button_yellow.jpg') no-repeat 0px 3px;}
