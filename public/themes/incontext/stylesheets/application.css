@@ -15,13 +15,13 @@ a:hover, a:active { color: #810C1F; }
 #header h1 { display: none; margin: 0 24px; }
 #header #quick-search { display: none; color: #000; margin: 14px 14px; }
 #header #quick-search a { color: #000; }
-#swf { height: 200px; background: #fff url(images/hp_bz.jpg) no-repeat top right; border:1px solid #686162; border-top:none; border-bottom:none;}
+#swf { height: 200px; background: #fff url(images/hp_bz.jpg) no-repeat top right; border:1px solid #686162; border-top:none; border-bottom:none; position: absolute; top: 165px; margin-left: -11px;}
 #top-menu { background-color: #373737; font-size: 10px; position: relative; padding: 0; height: 21px; margin: 0 auto; width: 910px; border: 1px solid #686162; border-bottom:none;}
 #top-menu ul { padding: 0 21px; }
 #top-menu li, #top-menu #loggedas { color: #fff; line-height: 21px; margin-right: 4px; }
 #top-menu li a { color: #eee; font-weight: normal; padding:4px 5px; }
 #top-menu li a:hover { color: #fff; text-decoration: none; }
-#main { background: #eeeeee; margin: 8px 24px 0px 24px; width: 910px; margin: 0 auto; border: 1px solid #686162; border-top: none;}
+#main { background: #eeeeee; margin: 8px 24px 0px 24px; width: 910px; margin: 200px auto 0 auto; border: 1px solid #686162; border-top: none;}
 #content { background-color: #fff; border-right: 1px solid #ccc; width: 70%; overflow: auto; }
 #sidebar { width: 26%; }
 #footer { background-color: transparent; border: 0px; clear: left; color:#eeeeee; font-size:9px; margin:4px auto 20px auto; padding-bottom:15px; text-align:left; width: 910px;}
