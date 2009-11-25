@@ -1,0 +1,8 @@
+--- 
+vendor/plugins/redmine_custom_website: 
+  squashed: true
+  url: git@github.com:incontext/redmine_custom_website.git
+  branch: master
+  type: git
+  revision: 9e4d438e3ae3313dd7a34bfa9719ef016e6536b2
+  remote: braid/vendor/plugins/redmine-custom-website
