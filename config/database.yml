@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  database: incontext_website_development
+  encoding: utf8
+
+testing:
+  adapter: postgresql
+  database: incontext_website_testing
+  encoding: utf8
+
+production:
+  adapter: postgresql
+  database: incontext_website_production
+  encoding: utf8
+
