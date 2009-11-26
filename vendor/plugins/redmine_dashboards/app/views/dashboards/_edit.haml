@@ -1,0 +1,7 @@
+- remote_form_for(@dashboard, :html => { :class => 'tabular' }) do |f|
+  = error_messages_for :dashboard
+  = render :partial => 'form', :locals => { :f => f }
+  = submit_tag 'Update', :disable_with => 'Updating'
+  %a{ :href => '#', :onclick => "$('edit_dashboard_area').hide();" }
+    Cancel
+

@@ -1,0 +1,8 @@
+%h2
+  New objective for
+  = @objective.dashboard.name
+
+- form_for :objective, @objective, :url => dashboard_objectives_path(@dashboard), :html => { :method => :post, :class => 'tabular' } do |f|
+  = render :partial => 'form', :locals => { :f => f }
+  = submit_tag 'Create'
+  = submit_tag 'Create and continue', :name => 'continue'

@@ -1,0 +1,68 @@
+%table.dashboard{:cellspacing => 0}
+  %tr
+    %th{ :colspan => 2 * col_num, :style => 'font-size: 150%; border-bottom: none;' }
+      %span{:id => "dashboard_#{dashboard.id}_description"}
+        = dashboard.description
+  %tr
+    %td{ :colspan => 2 * col_num, :style => 'font-size: 120%; font-weight: bold; text-align: center; border-top: none;' }
+      %span{:id => "dashboard_#{dashboard.id}_risk_rating"}
+        %span{:class => dashboard.risk_rating}= dashboard.risk_rating
+      %span{:id => "dashboard_#{dashboard.id}_objective"}
+        = dashboard.objective
+
+  %tr.header
+    - formatted_objectives.first.each do |x|
+
+      %td.rating{ :style => 'border: none; font-size: 120%;' }
+        - if x
+          %span{:class => x.risk_rating}
+            = x.risk_rating
+        - else
+          &nbsp;
+
+      %td{ :class => 'desc', :width => "#{100 / col_num - 3}%", :style => 'border-bottom: none;' }
+        - if x
+          - if controller
+            - if controller.action_name == 'edit'
+              = link_to "#{x.sequence} #{x.name}", edit_dashboard_objective_path(dashboard.id, x.id)
+            - else
+              == #{x.sequence} #{x.name}
+          - else
+            = x.sequence
+            %a{ :href => "/wiki/#{dashboard.project.identifier}/#{x.name}" }= x.name
+        - else
+          &nbsp;
+  %tr.header
+    - formatted_objectives.first.each do |x|
+      %td.rating{ :style => 'border-top: none; font-size: 120%;' }
+        &nbsp;
+
+      %td{ :class => 'desc', :width => "#{(100 / col_num) - 3}%", :style => 'border-top: none;'}
+        - if x.description
+          = x.description
+        - else
+          &nbsp;
+
+  - formatted_objectives[1..formatted_objectives.length].each do |x|
+    %tr
+      - x.each do |y|
+        %td.rating
+          - if y
+            %span{:class => y.risk_rating}
+              = y.risk_rating
+          - else
+            &nbsp;
+        %td{ :class => 'desc', :width => "#{(100 / col_num) - 3}%" }
+          - if y
+            - if controller && controller.action_name == 'edit'
+              = link_to "#{Objective.find(y.parent_id).sequence}.#{y.sequence} #{y.name}", edit_dashboard_objective_path(dashboard.id, y.id)
+            - else
+              == #{Objective.find(y.parent_id).sequence}.#{y.sequence} #{y.name}
+            - if controller && controller.action_name != 'print'
+              = link_to 'Issues', :controller  => :objectives, :action => :issues, :dashboard_id => dashboard.id, :objective_id => y.id
+            - else
+              &nbsp;
+          - else
+            &nbsp;
+
+.clear

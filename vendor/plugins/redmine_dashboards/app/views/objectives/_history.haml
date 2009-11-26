@@ -1,0 +1,24 @@
+%h4
+  History
+%h5
+  Objective changes
+- @objective.audits.each do |a|
+  %p
+    - user = User.find(a.user_id)
+    = user.firstname + ' ' + user.lastname
+    %strong
+      = a.action
+    %br
+    - if a.action == 'update'
+      - a.changes.keys.each do |k|
+        = k
+        %strong
+          from
+        = a.changes[k][0]
+        %strong
+          to
+        = a.changes[k][1]
+        %br
+    %strong
+      at
+    = a.created_at

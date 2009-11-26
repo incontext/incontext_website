@@ -1,0 +1,12 @@
+.contextual
+  = link_to 'Delete', dashboard_objective_path(@dashboard, @objective, :level => 1), :method => 'delete', :confirm => 'Are you sure?', :class => 'icon icon-del'
+
+%h2
+  Edit objective for
+  = @objective.dashboard.name
+
+- form_for :objective, @objective, :url => dashboard_objective_path(@dashboard, @objective), :html => { :method =>:put, :class => 'tabular' } do |f|
+  = render :partial => 'form', :locals => { :f => f }
+  = submit_tag
+
+= render :partial => 'history'

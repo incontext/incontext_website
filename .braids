@@ -1,4 +1,11 @@
 --- 
+vendor/plugins/redmine_dashboards: 
+  squashed: true
+  url: git@github.com:incontext/redmine_dashboards.git
+  branch: master
+  type: git
+  revision: b3ad31ac0adfb5e2a626856f23901c9255527c29
+  remote: braid/vendor/plugins/redmine-dashboards
 vendor/plugins/redmine_custom_website: 
   squashed: true
   url: git@github.com:incontext/redmine_custom_website.git

@@ -1,0 +1,7 @@
+- remote_form_for @objective, :html => { :class => 'tabular' } do |f|
+  = render :partial => 'form', :locals => { :f => f }
+  = submit_tag 'Save'
+  %a{ :href => '#', :onclick => "jQuery('#objective_edit_area').hide();" }
+    Cancel
+  |
+  = link_to_remote 'Delete', :url => dashboard_objective_path(@objective.dashboard, @objective), :method => 'delete', :confirm => 'Are you sure?', :class => 'icon icon-del' if @objective.id

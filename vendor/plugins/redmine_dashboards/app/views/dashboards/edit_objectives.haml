@@ -1,0 +1,27 @@
+.contextual
+  = link_to_remote 'Add objective', :url => new_dashboard_objective_path(@dashboard), :method => :get, :html => { :class => 'icon icon-add' }
+
+- content_for :sidebar do
+  %h3 New objectives
+  %ul.dashboard{ :id => 'unassigned', :style => 'width: 90%;' }
+    - @dashboard.unassigned_objectives.each do |o|
+      %li{ :id => "objectives_#{o.id}", :style => 'padding: 5px;' }
+        = link_to_remote "<span id='objective_#{o.id}_name'>#{o.name}</span>", :url => edit_dashboard_objective_path(o.dashboard.id, o.id), :method => :get
+      :javascript
+        jQuery(function() {
+          jQuery("#objectives_#{o.id}").draggable({ revert: true });
+        });
+
+%h2
+  Edit objectives
+
+= render :partial => 'edit_objectives', :locals => { :dashboard => @dashboard, :formatted_objectives => @formatted_objectives, :col_num => @col_num }
+
+= render :partial => 'history'
+- content_for :header_tags do
+  = stylesheet_link_tag 'dashboard', :plugin => 'redmine_dashboards'
+  = stylesheet_link_tag 'jqueryui/base/ui.all.css', :plugin => 'redmine_dashboards'
+  = javascript_include_tag 'jquery', :plugin => 'redmine_dashboards'
+  = javascript_include_tag 'jquery-ui', :plugin => 'redmine_dashboards'
+  %script
+    jQuery.noConflict();

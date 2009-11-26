@@ -1,0 +1,20 @@
+%li{ :id => "objectives_#{o.id}" }
+  - remote_form_for o do |f|
+    = f.select(:risk_rating, ['U', 'G', 'Y', 'R'], {}, { :onchange => "$('edit_objective_#{o.id}').request();" })
+
+  = link_to_remote "<span id='objective_#{o.id}_name'>#{o.name}</span>", :url => edit_dashboard_objective_path(o.dashboard.id, o.id), :method => :get
+  %span{:id=>"objective_#{o.id}_description"}
+    - if o.parent_id == 0 and o.description != ''
+      %br
+        = o.description
+
+  %hr
+  - if o.parent
+    = link_to 'Issues', :controller  => :objectives, :action => :issues, :dashboard_id => o.dashboard.id, :objective_id => o.id
+    |
+    = link_to 'New issue', :controller => :issues, :action => :new, :project_id => o.dashboard.project.id, :issue => { :objective_id => o.id }
+    |
+  = link_to_remote( '>>', :url => { :controller => 'dashboards', :action => 'retrive', :id => o.dashboard.id, :parent_id => o.id }) unless end_reached
+  %script
+    = droppable_js("objectives_#{o.id}", o.dashboard.unassigned_objectives + o.next_level, o.dashboard.id, o.dashboard.project.id)
+

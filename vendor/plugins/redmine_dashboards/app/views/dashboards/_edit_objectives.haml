@@ -1,0 +1,37 @@
+- p_ids = dashboard.objectives.find_all_by_parent_id(0).map { |o| o.id }
+%script
+  =# sort_js(@dashboard.id, @project.id, p_ids)
+  = single_sort_js(@dashboard.id, @project.id, 'sortable_a')
+  = single_sort_js(@dashboard.id, @project.id, 'sortable_b')
+  = single_sort_js(@dashboard.id, @project.id, 'sortable_c')
+
+#objective_edit_area
+
+.box
+  %ul.dashboard{ :id => "sortable_a" }
+    = link_to_remote 'Add', :url => new_dashboard_objective_path(@dashboard, :parent_id => 0), :method => :get, :html => { :class => 'icon icon-add' }
+
+    - o = dashboard.objectives.find_by_parent_id(0)
+    - next_level = o.next_level if o
+
+    - dashboard.objectives.find_all_by_parent_id(0, :order => 'sequence').each do |p|
+      %li{ :id => "objectives_#{p.id}" }
+        - remote_form_for p do |f|
+          = f.select(:risk_rating, ['U', 'G', 'Y', 'R'], {}, { :onchange => "$('edit_objective_#{p.id}').request();" })
+        = link_to_remote "<span id='objective_#{p.id}_name'>#{p.name}</span>", :url => edit_dashboard_objective_path(p.dashboard.id, p.id), :method => :get
+        %span{:id=>"objective_#{p.id}_description"}
+          - if p.description != ''
+            %br
+              = p.description
+
+        %hr
+        = link_to_remote( '>>', :url => { :action => 'retrive', :id => dashboard.id, :parent_id => p.id })
+      %script
+        = droppable_js("objectives_#{p.id}", dashboard.unassigned_objectives + next_level, dashboard.id, dashboard.project.id)
+
+  %ul.dashboard{ :id => 'sortable_b' }
+
+  %ul.dashboard{ :id => 'sortable_c' }
+
+  .clear
+    &nbsp;

@@ -1,0 +1,21 @@
+.box
+  = f.hidden_field :project_id
+  .splitcontentleft
+    %p
+      = label_tag 'Name'
+      %span.required
+        *
+      = f.text_field :name
+  .splitcontentright
+    %p
+      = label_tag 'Risk Rating'
+      = f.select :risk_rating, %w(U G Y R)
+
+  %p
+    = label_tag 'Description'
+    %span.required
+      *
+    = f.text_field :description
+  %p
+    = label_tag 'Measure'
+    = f.text_field :objective

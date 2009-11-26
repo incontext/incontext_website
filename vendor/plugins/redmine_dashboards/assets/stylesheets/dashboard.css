@@ -1,0 +1,167 @@
+table.wiki {
+  width: 100%;
+  border: 1px solid #999;
+}
+
+table.wiki td {
+  border: 1px solid #999;
+  padding: 6px 2px;
+}
+
+table.wiki th {
+  border: 1px solid #999;
+  text-align: center;
+  padding: 6px 2px;
+}
+
+span.G {
+  padding: 0 3px;
+  font-weight: bold;
+  background-color: GreenYellow;
+  border: 2px solid #9fcf9f;
+  margin-right: 4px;
+}
+
+span.R {
+  padding: 0 3px;
+  font-weight: bold;
+  background-color: Tomato;
+  border: 2px solid Red;
+  margin-right: 4px;
+}
+
+span.U {
+  padding: 0 3px;
+  font-weight: bold;
+  background-color: WhiteSmoke;
+  border: 2px solid Silver;
+  margin-right: 4px;
+}
+
+span.Y {
+  padding: 0 3px;
+  font-weight: bold;
+  background-color: Yellow;
+  border: 2px solid Gold;
+  margin-right: 4px;
+}
+
+.dashboard-header {
+  width: 100%;
+  border: 1px solid #999;
+  text-align: center;
+  font-weight: bold;
+  font-size: 150%;
+  height: 3em;
+  line-height: 1.5em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.dashboard-header p {
+  margin: 0px;
+  font-size: 75%;
+}
+
+ul.dashboard {
+  float: left;
+  list-style: none;
+  width: 30%;
+  padding: 5px;
+  margin: 0 5px;
+  border: 1pt dashed #e4e4e4;
+}
+
+ul.dashboard li {
+  padding: 3px;
+  border: 1pt solid #e4e4e4;
+  margin: 1em 0;
+}
+
+ul.dashboard li.current {
+  background-color: #E0ECFF;
+  border: 1pt solid #206CFF;
+  margin: 1em 0;
+}
+
+ul.dashboard li.highlight {
+  background-color: #f9ffef;
+  border: 1pt solid #649A2C;
+  margin: 2em 0;
+  height: 4em;
+}
+table.dashboard, .wiki table.dashboard {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #999;
+}
+table.dashboard tr.header{
+  background-color: #ccc;
+}
+
+table.dashboard td, table.dashboard th {
+  border: 1px solid #999;
+  padding: 6px 3px;
+}
+
+table.dashboard td.rating {
+  vertical-align: middle;
+  text-align: center;
+  border-right: 0px;
+  width: 3%;
+}
+
+table.dashboard td.desc {
+  border-left: 0px;
+  vertical-align: top;
+}
+
+table.dashboard th {
+}
+
+.blue-box {
+  border: 5px solid #759FCF;
+  padding: 5px;
+}
+
+h1.blue {
+  background-color: #759FCF;
+  color: white;
+  padding: 5px;
+  font-size: 12pt;
+}
+
+#print_footer {
+  background-color: #759FCF;
+  color: white;
+  padding: 5px;
+  height: 10pt;
+}
+
+#print_footer a {
+  color: white;
+}
+
+#print_footer span {
+  width: 33%;
+  height: 10pt;
+  float: left;
+}
+
+span.new_objective {
+  background-color: white;
+  width: 98%;
+  float: left;
+  padding: 3px 1%;
+  margin-bottom: 3px;
+}
+
+.objective_issues {
+  clear: both;
+  background-color: #dfffdf;
+  width: 100%;
+}
+
+.clear {
+  clear: both;
+}

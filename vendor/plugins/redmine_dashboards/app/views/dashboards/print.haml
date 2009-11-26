@@ -1,0 +1,29 @@
+!!!
+%html
+  %head
+  %title=h html_title
+  = stylesheet_link_tag 'application', :media => 'all'
+  = stylesheet_link_tag 'dashboard', :media => 'all', :plugin => 'redmine_dashboards'
+  = javascript_include_tag :defaults
+  = call_hook :view_layouts_base_html_head
+
+#wrapper
+  #main.nosidebar
+    #content
+      %h1.blue
+        == Business Improvement Dashboard for : #{@dashboard.name}
+      .blue-box
+        - if @dashboard
+          = render :partial => 'dashboard', :locals => { :dashboard => @dashboard, :formatted_objectives => @formatted_objectives, :col_num => @col_num }
+        - else
+          %p.nodata
+            No dashboard to display
+        %br
+        = render :partial => 'legend'
+      #print_footer
+        %span{:style => 'text-align: left;'}
+          == Printed on #{Time.now.strftime('%d/%m/%Y')}
+        %span{:style => 'text-align: center;'}
+          == &copy; #{Time.now.year} InContext Solutions
+        %span{:style => 'text-align: right;'}
+          = link_to 'www.incontext.com.au', 'http://www.incontext.com.au'

@@ -1,0 +1,19 @@
+= link_to_remote 'Add', :url => new_dashboard_objective_path(@dashboard, :parent_id => parent.id), :method => :get, :html => { :class => 'icon icon-add' }
+
+
+- next_level = children.first ? children.first.next_level : []
+
+- children.each do |c|
+  %li{ :id => "objectives_#{c.id}" }
+    - remote_form_for c do |f|
+      = f.select(:risk_rating, ['U', 'G', 'Y', 'R'], {}, { :onchange => "$('edit_objective_#{c.id}').request();" })
+    = link_to_remote "<span id='objective_#{c.id}_name'>#{c.name}</span>", :url => edit_dashboard_objective_path(dashboard.id, c.id), :method => :get
+    %hr
+    = link_to 'Issues', :controller  => :objectives, :action => :issues, :dashboard_id => dashboard.id, :objective_id => c.id
+    |
+    = link_to 'New issue', :controller => :issues, :action => :new, :project_id => dashboard.project.id, :issue => { :objective_id => c.id }
+    |
+    = link_to_remote( '>>', :url => { :action => 'retrive', :id => dashboard.id, :parent_id => c.id }) unless end_reached
+    %script
+      = droppable_js("objectives_#{c.id}", dashboard.unassigned_objectives + next_level, dashboard.id, dashboard.project.id)
+

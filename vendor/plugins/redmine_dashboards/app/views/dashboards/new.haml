@@ -1,0 +1,10 @@
+%h2
+  New dashboard
+
+%p
+  = error_messages_for :dashboard
+
+- form_for(@dashboard, :html => { :class => 'tabular' }) do |f|
+  = render :partial => 'form', :locals => { :f => f }
+  = submit_tag 'Create'
+

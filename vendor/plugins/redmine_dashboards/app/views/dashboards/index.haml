@@ -1,0 +1,28 @@
+
+- unless @dashboard
+  .contextual
+    = link_to 'New dashboard', new_dashboard_path(:project_id => @project.id), :class => 'icon icon-add'
+- else
+  .contextual
+    = link_to_remote 'Update', :url => edit_dashboard_path(@dashboard.id, :project_id => @project.id), :method => :get, :html => {:class => 'icon icon-edit'}
+    = link_to 'Update Objectives', { :controller => :dashboards, :action => :edit_objectives, :id => @dashboard.id, :project_id => @project.id } , { :class => 'icon icon-edit' }
+    = link_to 'Print', { :action => 'print', :id => @dashboard.id, :project_id => @project.id}, :class => 'icon icon-html'
+
+%h2
+  Dashboard
+
+#edit_dashboard_area
+
+- unless @dashboard
+  %p.nodata
+    No dashboard to display
+- else
+  %h3
+    %span{:id => "dashboard_#{@dashboard.id}_name"}
+      = @dashboard.name
+  = render :partial => 'dashboard', :locals => { :dashboard => @dashboard, :formatted_objectives => @formatted_objectives, :col_num => @col_num }
+
+= render :partial => 'history'
+= content_for :header_tags do
+  = stylesheet_link_tag 'dashboard', :plugin => 'redmine_dashboards'
+
