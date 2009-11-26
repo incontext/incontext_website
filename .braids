@@ -6,6 +6,13 @@ vendor/plugins/redmine_dashboards:
   type: git
   revision: b3ad31ac0adfb5e2a626856f23901c9255527c29
   remote: braid/vendor/plugins/redmine-dashboards
+vendor/plugins/acts_as_audited: 
+  squashed: true
+  url: http://github.com/collectiveidea/acts_as_audited.git
+  branch: master
+  type: git
+  revision: b3272a8d62cb628fdb6d59c59822fb5170222b0c
+  remote: braid/vendor/plugins/acts-as-audited
 vendor/plugins/redmine_custom_website: 
   squashed: true
   url: git@github.com:incontext/redmine_custom_website.git
