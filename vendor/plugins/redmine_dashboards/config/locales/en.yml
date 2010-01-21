@@ -1,0 +1,4 @@
+# English strings go here for Rails i18n
+en:
+  field_objective: Objective
+  field_objective_name: Objective
