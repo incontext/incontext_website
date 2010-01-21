@@ -23,10 +23,12 @@ Redmine::MenuManager.map :project_menu do |menu|
     :if => Proc.new { |p| p.identifier != 'www' }
   menu.push :activity, { :controller => 'projects', :action => 'activity' }, :before => :issues,
     :if => Proc.new { |p| p.identifier != 'www' }
+
   menu.delete :wiki
   menu.push :wiki, { :controller => 'wiki', :action => 'index', :page => nil },
               :if => Proc.new { |p| p.wiki && !p.wiki.new_record? && User.current.logged? }
-  menu.push :wiki, { :controller => 'wiki', :action => 'index', :page => nil }, :caption => :label_wiki_home, :before => :news,
+
+  menu.push :home, { :controller => 'wiki', :action => 'index', :page => nil }, :caption => :label_wiki_home, :before => :news,
               :if => Proc.new { |p| p.wiki && !p.wiki.new_record? && !User.current.logged? && p.identifier == 'www'}
 end
 
