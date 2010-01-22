@@ -13,7 +13,7 @@ a:hover, a:active { color: #810C1F; }
 #header, #top-menu, #swf { margin: 0 auto; width: 910px;}
 #header { background: #ffffff url(images/incontext_logo.jpg) no-repeat 0 0; padding: 0; height: 142px; border:1px solid #686162; border-bottom: none;}
 #header h1 { display: none; margin: 0 24px; }
-#header #quick-search { display: none; color: #000; margin: 14px 14px; }
+#header #quick-search { color: #000; margin: 14px 14px; }
 #header #quick-search a { color: #000; }
 #swf { height: 200px; background: #fff url(images/hp_bz.jpg) no-repeat top right; border:1px solid #686162; border-top:none; border-bottom:none; margin-left: -1px;}
 #top-menu { background-color: #373737; font-size: 10px; position: relative; padding: 0; height: 21px; margin: 0 auto; width: 910px; border: 1px solid #686162; border-bottom:none;}
