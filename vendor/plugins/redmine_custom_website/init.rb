@@ -36,5 +36,8 @@ Redmine::MenuManager.map :top_menu do |menu|
   menu.delete :projects
   menu.push :projects, { :controller => 'projects', :action => 'index' }, :caption => :label_project_plural,
     :if => Proc.new { User.current.logged? }
+  menu.delete :help
+  menu.push :help, Redmine::Info.help_url, :last => true,
+    :if => Proc.new { User.current.logged? }
 end
 
