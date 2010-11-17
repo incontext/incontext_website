@@ -1,0 +1,9 @@
+Thanks go to the following people for patches and contributions:
+
+Maintainers
+
+* Eric Davis of Little Stream Software
+
+Contributors
+
+* Gergő Jónás

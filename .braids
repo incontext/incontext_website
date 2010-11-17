@@ -1,4 +1,11 @@
 --- 
+vendor/plugins/google-analytics-plugin: 
+  squashed: true
+  url: git://github.com/edavis10/redmine-google-analytics-plugin.git
+  branch: master
+  type: git
+  revision: e75695f8567b630dfa2c0491526651ce5057a872
+  remote: braid/vendor/plugins/google-analytics-plugin
 vendor/plugins/redmine_dashboards: 
   squashed: true
   url: git@github.com:incontext/redmine_dashboards.git
