@@ -50,7 +50,7 @@
 
 <%= tag('div', {:id => 'main', :class => (has_content?(:sidebar) ? '' : 'nosidebar')}, true) %>
     <div id="banner">
-      <%= call_hook :view_layouts_base_banner if @project and @project.identifier == 'www' and controller_name == 'wiki' and action_name == 'index' and !params[:page] %>
+      <%= call_hook :view_layouts_base_banner if @project and @project.identifier == 'www' and @project.wiki and @project.wiki.start_page and controller_name == 'wiki' and action_name == 'index' and (!params[:page] or params[:page].downcase == @project.wiki.start_page.downcase) %>
     </div>
     <div id="sidebar">
         <%= yield :sidebar %>

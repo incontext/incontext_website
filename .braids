@@ -8,8 +8,8 @@ vendor/plugins/google-analytics-plugin:
   remote: braid/vendor/plugins/google-analytics-plugin
 vendor/plugins/redmine_dashboards: 
   squashed: true
-  url: git@github.com:incontext/redmine_dashboards.git
   branch: master
+  url: git@github.com:incontext/redmine_dashboards.git
   type: git
   revision: d0f81a7aa481f8c11f0fc1a4fb5ebbf0165d8a56
   remote: braid/vendor/plugins/redmine-dashboards
@@ -18,12 +18,12 @@ vendor/plugins/redmine_custom_website:
   branch: master
   url: git@github.com:incontext/redmine_custom_website.git
   type: git
-  revision: 5b13a42f0b5291091e916740a502a459db96e727
+  revision: 9e5f39d3540148446597374b12f25511fefa69de
   remote: braid/vendor/plugins/redmine-custom-website
 vendor/plugins/acts_as_audited: 
   squashed: true
-  branch: master
   url: http://github.com/collectiveidea/acts_as_audited.git
+  branch: master
   type: git
   revision: b3272a8d62cb628fdb6d59c59822fb5170222b0c
   remote: braid/vendor/plugins/acts-as-audited
