@@ -1,15 +1,15 @@
 --- 
 vendor/plugins/google-analytics-plugin: 
   squashed: true
-  url: git://github.com/edavis10/redmine-google-analytics-plugin.git
   branch: master
+  url: git://github.com/edavis10/redmine-google-analytics-plugin.git
   type: git
   revision: e75695f8567b630dfa2c0491526651ce5057a872
   remote: braid/vendor/plugins/google-analytics-plugin
 vendor/plugins/redmine_dashboards: 
   squashed: true
-  branch: master
   url: git@github.com:incontext/redmine_dashboards.git
+  branch: master
   type: git
   revision: d0f81a7aa481f8c11f0fc1a4fb5ebbf0165d8a56
   remote: braid/vendor/plugins/redmine-dashboards
@@ -18,12 +18,12 @@ vendor/plugins/redmine_custom_website:
   branch: master
   url: git@github.com:incontext/redmine_custom_website.git
   type: git
-  revision: 9e5f39d3540148446597374b12f25511fefa69de
+  revision: 0f96bb8a2f0ff29547d09876e29324664f758617
   remote: braid/vendor/plugins/redmine-custom-website
 vendor/plugins/acts_as_audited: 
   squashed: true
-  url: http://github.com/collectiveidea/acts_as_audited.git
   branch: master
+  url: http://github.com/collectiveidea/acts_as_audited.git
   type: git
   revision: b3272a8d62cb628fdb6d59c59822fb5170222b0c
   remote: braid/vendor/plugins/acts-as-audited
